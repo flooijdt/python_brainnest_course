@@ -1,2 +1,2 @@
 celsius = float(input("Give the temp. in celsius: "))
-print(f"the temperature in fareheit is: {celsius * 1.8 + 32}.")
+print(f"the temperature in fareheit is: {celsius}.")
