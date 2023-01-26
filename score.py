@@ -3,7 +3,7 @@ number = input("Input a number from 0.0 to 1.0: ")
 def computegrade(number):
     try:
         float(number)
-    except:
+    except ValueError:
         print("You entered a string!")
 
     number = float(number)
