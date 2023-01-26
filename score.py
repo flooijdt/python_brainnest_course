@@ -5,7 +5,7 @@ try:
 except:
     print("You entered a string!")
 
-float(number)
+number = float(number)
 
 if number >= 0.9:
     print("A")
