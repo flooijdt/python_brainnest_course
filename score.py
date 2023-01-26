@@ -1,7 +1,7 @@
 number = input("Input a number from 0.0 to 1.0: ")
 
 try:
-    isinstance(number, str)
+    not isinstance(number, str)
 except:
     print("You entered a string!")
 
