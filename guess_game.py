@@ -1,10 +1,11 @@
-response = input("Choose a, b or c: ")
+resp = input("Choose a, b or c: ")
 
-if response == "a":
+if resp == "a":
     print("Correct!")
-elif response == "b":
+elif resp == "b":
     print("Wrong!")
-elif response == "c":
+elif resp == "c":
     print("Wrong!")
 else:
     print("invalid input.")
+
