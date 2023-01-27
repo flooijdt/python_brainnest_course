@@ -17,4 +17,3 @@ for key, value in list_o_dicts:
 
 for number in list_o_numbers:
     if number
-    
