@@ -4,14 +4,13 @@ port = 1025
 smtp_server = "localhost"
 sender_email = "paratestes868@gmail.com"
 receiver_email = "paratestes868@gmail.com"
-password = input("Type your password and press enter: ")
 
 message = f"""\
 Sender: {sender_email}
 Receiver: {receiver_email}
-Subject: Hi there
+Subject: automating e-mail sending
 
-This message is sent from Python."""
+This is the body of the email."""
 
 with smtplib.SMTP(smtp_server, port) as server:
     server.sendmail(sender_email, receiver_email, message)
