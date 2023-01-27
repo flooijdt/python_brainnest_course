@@ -6,7 +6,9 @@ sender_email = "paratestes868@gmail.com"
 receiver_email = "paratestes868@gmail.com"
 password = input("Type your password and press enter: ")
 
-message = """\
+message = f"""\
+Sender: {sender_email}
+Receiver: {receiver_email}
 Subject: Hi there
 
 This message is sent from Python."""
