@@ -1,4 +1,4 @@
-import smtplib
+import smtplib, ssl
 
 port = 1025
 smtp_server = "localhost"
