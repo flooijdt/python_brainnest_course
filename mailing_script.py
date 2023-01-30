@@ -14,6 +14,7 @@ sender_email = "paratestes868@gmail.com"
 # A list with every receiver's email:
 receiver_email_list = [
     "paratestes868@gmail.com",
+    # 10 minute mail created for test:
     "sijlxsufsbmfluchxv@tmmcv.net"
 ]
 # by default the attachments names are attachment.txt and
@@ -25,6 +26,7 @@ attachment_file = "attachment"
 
 # the password is given via input as a security measure.
 password = input("Input the account's password: ")
+
 
 def send_email(
     port,
