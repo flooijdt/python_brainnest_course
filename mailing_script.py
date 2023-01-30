@@ -61,16 +61,15 @@ def send_email(
     message.attach(part1)
     message.attach(part2)
 
-    try:
-        # opens the attachments and encode them in order to send them
-        # with the message:
-        for file in os.listdir('.'):
-            if file.startswith(attachment_file):
+    # opens the attachments and encode them in order to send them
+    # with the message:
+    for file in os.listdir('.'):
+        if file.startswith(attachment_file):
+            try:
                 with open(file, "rb") as attachment:
                     part = MIMEBase("application", "octet-stream")
                     part.set_payload(attachment.read())
                     encoders.encode_base64(part)
-
                     # Add header as key/value pair to file part
                     part.add_header(
                         "Content-Disposition",
@@ -80,12 +79,11 @@ def send_email(
                     # Add file to message and convert message to string
                     message.attach(part)
                     text = message.as_string()
-    except:
-        print("Error: Could not encode or attach files.")
-
+            except:
+                ("Error: Could not attach or encode files.")
 
     context = ssl.create_default_context()
-    # Creates smtp server. 
+    # Creates smtp server.
     with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
         try:
             server.login(sender_email, password)
