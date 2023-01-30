@@ -16,18 +16,16 @@ message["To"] = receiver_email
 
 # Create the plain-text and HTML version of your message
 text = """\
-Hi,
+Hi Arsalan,
 How are you?
-Real Python has many great tutorials:
-www.realpython.com"""
+My Signature."""
 
 html = """\
 <html>
   <body>
-    <p>Hi,<br>
+    <p>Hi, Arsalan<br>
        How are you?<br>
-       <a href="http://www.realpython.com">Real Python</a> 
-       has many great tutorials.
+       My Signature.
     </p>
   </body>
 </html>
