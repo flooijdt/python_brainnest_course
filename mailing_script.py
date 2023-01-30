@@ -23,6 +23,8 @@ receiver_email_list = [
 # folder as the program.
 attachment_file = "attachment"
 
+# the password is given via input as a security measure.
+password = input("Input the account's password: ")
 
 def send_email(
     port,
@@ -31,8 +33,6 @@ def send_email(
     receiver_email,
     attachment_file
 ):
-    # the password is given via input as a security measure.
-    password = input("Input the account's password: ")
 
     # creates a multipart message object for the email message:
     message = MIMEMultipart("alternative")
@@ -101,7 +101,7 @@ def send_email(
             print("SMTPAuthenticationError: \
                 could not authenticate the sender.")
 
-    print("Email sended successfully.")
+    print(f"Email sended successfully to {receiver_email}")
 
 
 for receiver_email in receiver_email_list:
