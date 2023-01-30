@@ -11,7 +11,8 @@ from email.mime.multipart import MIMEMultipart
 port = 465
 smtp_server = "smtp.gmail.com"
 sender_email = "paratestes868@gmail.com"
-receiver_email = "paratestes868@gmail.com"
+# A list with every receiver's email:
+receiver_email = ["paratestes868@gmail.com"]
 # by default the attachments names are attachment.txt and
 # attachment2.csv. As the name declared here will acctually be
 # matched in a globbing fashion by default it is "attachment",
@@ -84,18 +85,19 @@ def send_email(
                 ("Error: Could not attach or encode files.")
 
     context = ssl.create_default_context()
-    # Creates smtp server.
-    with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
-        try:
-            server.login(sender_email, password)
-        except smtplib.SMTPConnectError:
-            print("SMTPConnectError: Could connect to sender email\
-                 with given password.")
-        try:
-            server.sendmail(sender_email, receiver_email, message.as_string())
-        except smtplib.SMTPAuthenticationError:
-            print("SMTPAuthenticationError: \
-                could not authenticate the sender.")
+    # Creates smtp server. and send emails for each receiver
+    for receiver in receiver_email:
+        with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
+            try:
+                server.login(sender_email, password)
+            except smtplib.SMTPConnectError:
+                print("SMTPConnectError: Could connect to sender email\
+                     with given password.")
+            try:
+                server.sendmail(sender_email, receiver, message.as_string())
+            except smtplib.SMTPAuthenticationError:
+                print("SMTPAuthenticationError: \
+                    could not authenticate the sender.")
 
     print("Email sended successfully.")
 
