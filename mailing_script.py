@@ -1,4 +1,6 @@
-import smtplib, ssl, os
+import smtplib
+import ssl
+import os
 from email import encoders
 from email.mime.base import MIMEBase
 from email.mime.text import MIMEText
@@ -16,7 +18,14 @@ receiver_email = "paratestes868@gmail.com"
 # wich will match both archives.
 attachment_file = "attachment"
 
-def send_email(port, smtp_server, sender_email, receiver_email, attachment_file):
+
+def send_email(
+    port,
+    smtp_server,
+    sender_email,
+    receiver_email,
+    attachment_file
+):
     # the password is given via input as a security measure.
     password = input("input the password: ")
 
