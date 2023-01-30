@@ -1,6 +1,10 @@
+#!/bin/python3
+
 import smtplib
 import ssl
 import os
+import schedule
+import time
 from email import encoders
 from email.mime.base import MIMEBase
 from email.mime.text import MIMEText
@@ -19,14 +23,13 @@ receiver_email_list = [
 ]
 # by default the attachments names are attachment.txt and
 # attachment2.csv. As the name declared here will acctually be
-# matched in a globbing fashion by default it is "attachment",
-# wich will match both archives. The archives must be on the same
-# folder as the program.
+# matched in a globbing fashion with the names of files in
+# the programs folder, it is "attachment", wich will match both archives.
 attachment_file = "attachment"
-
 # the password is given via input as a security measure.
 password = input("Input the account's password: ")
-
+# time to daily run the program
+time_to_run = "17:33"
 
 def send_email(
     port,
@@ -106,11 +109,21 @@ def send_email(
     print(f"Email sended successfully to {receiver_email}")
 
 
-for receiver_email in receiver_email_list:
-    send_email(
-        port,
-        smtp_server,
-        sender_email,
-        receiver_email,
-        attachment_file
-    )
+def send_email_to_everyone():
+    for receiver_email in receiver_email_list:
+        send_email(
+            port,
+            smtp_server,
+            sender_email,
+            receiver_email,
+            attachment_file
+        )
+
+schedule.every().day.at(time_to_run).do(send_email_to_everyone)
+
+while True:
+ 
+    # Checks whether a scheduled task
+    # is pending to run or not
+    schedule.run_pending()
+    time.sleep(60)
