@@ -14,8 +14,9 @@ sender_email = "paratestes868@gmail.com"
 receiver_email = "paratestes868@gmail.com"
 # by default the attachments names are attachment.txt and
 # attachment2.csv. As the name declared here will acctually be
-# matched in a globbing fashion, by default it is "attachment",
-# wich will match both archives.
+# matched in a globbing fashion by default it is "attachment",
+# wich will match both archives. The archives must be on the same
+# folder as the program.
 attachment_file = "attachment"
 
 
