@@ -11,7 +11,9 @@ smtp_server = "smtp.gmail.com"
 sender_email = "paratestes868@gmail.com"
 receiver_email = "paratestes868@gmail.com"
 # by default the attachments names are attachment.txt and
-# attachment2.csv
+# attachment2.csv. As the name declared here will acctually be
+# matched in a globbing fashion, by default it is "attachment",
+# wich will match both archives.
 attachment_file = "attachment"
 
 def send_email(port, smtp_server, sender_email, receiver_email, attachment_file):
