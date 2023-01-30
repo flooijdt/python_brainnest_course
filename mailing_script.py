@@ -27,7 +27,7 @@ def send_email(
     attachment_file
 ):
     # the password is given via input as a security measure.
-    password = input("input the password: ")
+    password = input("Input the account's password: ")
 
     # creates a multipart message object for the email message:
     message = MIMEMultipart("alternative")
@@ -61,30 +61,42 @@ def send_email(
     message.attach(part1)
     message.attach(part2)
 
-    # opens the attachments and encode them in order to send them
-    # with the message:
-    for file in os.listdir('.'):
-        if file.startswith(attachment_file):
-            with open(file, "rb") as attachment:
-                part = MIMEBase("application", "octet-stream")
-                part.set_payload(attachment.read())
-                encoders.encode_base64(part)
+    try:
+        # opens the attachments and encode them in order to send them
+        # with the message:
+        for file in os.listdir('.'):
+            if file.startswith(attachment_file):
+                with open(file, "rb") as attachment:
+                    part = MIMEBase("application", "octet-stream")
+                    part.set_payload(attachment.read())
+                    encoders.encode_base64(part)
 
-                # Add header as key/value pair to file part
-                part.add_header(
-                    "Content-Disposition",
-                    f"file; filename= {file}",
-                )
+                    # Add header as key/value pair to file part
+                    part.add_header(
+                        "Content-Disposition",
+                        f"file; filename= {file}",
+                    )
 
-                # Add file to message and convert message to string
-                message.attach(part)
-                text = message.as_string()
+                    # Add file to message and convert message to string
+                    message.attach(part)
+                    text = message.as_string()
+    except:
+        print("Error: Could not encode or attach files.")
+
 
     context = ssl.create_default_context()
-    # Creates smtp server.
+    # Creates smtp server. 
     with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
-        server.login(sender_email, password)
-        server.sendmail(sender_email, receiver_email, message.as_string())
+        try:
+            server.login(sender_email, password)
+        except smtplib.SMTPConnectError:
+            print("SMTPConnectError: Could connect to sender email\
+                 with given password.")
+        try:
+            server.sendmail(sender_email, receiver_email, message.as_string())
+        except smtplib.SMTPAuthenticationError:
+            print("SMTPAuthenticationError: \
+                could not authenticate the sender.")
 
     print("Email sended successfully.")
 
