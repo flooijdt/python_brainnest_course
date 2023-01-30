@@ -1,9 +1,11 @@
 import smtplib, ssl
 
-port = 1025
-smtp_server = "localhost"
+port = 465
+smtp_server = "smtp.gmail.com"
 sender_email = "paratestes868@gmail.com"
 receiver_email = "paratestes868@gmail.com"
+password = input("input the password: ")
+
 
 message = f"""\
 Sender: {sender_email}
