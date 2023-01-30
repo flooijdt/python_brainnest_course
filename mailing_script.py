@@ -1,5 +1,7 @@
 #!/bin/python3
-
+# This is a script, remember to make the file executable.
+# in Unix this is done by the chmod comand:
+# chmod 744 "name of this file"
 import smtplib
 import ssl
 import os
@@ -30,6 +32,7 @@ attachment_file = "attachment"
 password = input("Input the account's password: ")
 # time to daily run the program
 time_to_run = "17:33"
+
 
 def send_email(
     port,
@@ -109,6 +112,7 @@ def send_email(
     print(f"Email sended successfully to {receiver_email}")
 
 
+# Function to send email to everyone in receiver_email_list:
 def send_email_to_everyone():
     for receiver_email in receiver_email_list:
         send_email(
@@ -119,10 +123,13 @@ def send_email_to_everyone():
             attachment_file
         )
 
+
+# Calls send_email_to_everyone() function daily at
+# the time given to the time_to_run variable:
 schedule.every().day.at(time_to_run).do(send_email_to_everyone)
 
+# Creates a infinite loop that will refresh every 60 seconds:
 while True:
- 
     # Checks whether a scheduled task
     # is pending to run or not
     schedule.run_pending()
