@@ -5,6 +5,8 @@
 # from time to time.
 import ftplib
 import os
+import shutil
+import ntpath
 
 # FTP server information:
 hostname = "ftp.dlptest.com"
@@ -37,9 +39,13 @@ script_dir = os.path.dirname(__file__)
 for filename in filenames:
     rel_path = f"ftp_files/{filename}"
     abs_file_path = os.path.join(script_dir, rel_path)
+    dest_network = ntpath.join("192.168.xxx.xx", "Public", f"{filename}")
     with open(abs_file_path, "wb") as file:
         # Download the file "RETR filename"
         ftp_server.retrbinary(f"RETR {filename}", file.write)
+    shutil.copyfile(abs_file_path, dest_network)
+    
+
 
 # Close the Connection
 ftp_server.quit()
