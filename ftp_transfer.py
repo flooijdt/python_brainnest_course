@@ -39,7 +39,7 @@ script_dir = os.path.dirname(__file__)
 for filename in filenames:
     rel_path = f"ftp_files/{filename}"
     abs_file_path = os.path.join(script_dir, rel_path)
-    dest_network = ntpath.join("192.168.xxx.xx", "Public", f"{filename}")
+    dest_network = ntpath.join("dav://linux.local", "Public", f"{filename}")
     with open(abs_file_path, "wb") as file:
         # Download the file "RETR filename"
         ftp_server.retrbinary(f"RETR {filename}", file.write)
