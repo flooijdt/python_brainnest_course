@@ -7,6 +7,7 @@ import ssl
 import os
 import schedule
 import time
+import logging
 from email import encoders
 from email.mime.base import MIMEBase
 from email.mime.text import MIMEText
@@ -31,7 +32,11 @@ attachment_file = "attachment"
 # the password is given via input as a security measure.
 password = input("Input the account's password: ")
 # time to daily run the program
-time_to_run = "17:33"
+time_to_run = "08:47"
+
+# starts logging the program status.
+logging.basicConfig(filename="log.txt", level=logging.DEBUG,
+                    format="%(asctime)s %(message)s")
 
 
 def send_email(
@@ -42,11 +47,15 @@ def send_email(
     attachment_file
 ):
 
+    logging.info("The program accepted initial parameters.")
+
     # creates a multipart message object for the email message:
     message = MIMEMultipart("alternative")
     message["Subject"] = "This is the Subject of the e-mail."
     message["From"] = sender_email
     message["To"] = receiver_email
+
+    logging.info(f"validated sender and receiver {receiver_email}.")
 
     # plain-text and HTML version of message:
     text = """\
@@ -94,22 +103,26 @@ def send_email(
                     text = message.as_string()
             except:
                 ("Error: Could not attach or encode files.")
+                logging.critical("The program crashed:\
+                     Could not attach or encode files")
 
+    logging.info("The program attached and encoded files.")
     context = ssl.create_default_context()
     # Creates server:
     with smtplib.SMTP_SSL(smtp_server, port, context=context) as server:
         try:
             server.login(sender_email, password)
         except smtplib.SMTPConnectError:
-            print("SMTPConnectError: Could connect to sender email\
+            logging.critical("SMTPConnectError: Could connect to sender email\
                  with given password.")
+        logging.info("SMTP server created successfully.")
         try:
             server.sendmail(sender_email, receiver_email, message.as_string())
         except smtplib.SMTPAuthenticationError:
-            print("SMTPAuthenticationError: \
+            logging.critical("SMTPAuthenticationError: \
                 could not authenticate the sender.")
 
-    print(f"Email sended successfully to {receiver_email}")
+    logging.info(f"Email sended successfully to {receiver_email}")
 
 
 # Function to send email to everyone in receiver_email_list:
@@ -123,11 +136,12 @@ def send_email_to_everyone():
             attachment_file
         )
 
+logging.info("Iteration thru receivers_list happened successfully.")
 
 # Calls send_email_to_everyone() function daily at
 # the time given to the time_to_run variable:
 schedule.every().day.at(time_to_run).do(send_email_to_everyone)
-
+logging.info("Schedulling happened successfully.")
 # Creates a infinite loop that will refresh every 60 seconds:
 while True:
     # Checks whether a scheduled task
