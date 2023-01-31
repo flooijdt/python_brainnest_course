@@ -17,27 +17,23 @@ ftp_server = ftplib.FTP(hostname, username, password)
 ftp_server.encoding = "utf-8"
 
 # Enter filename to store with extension
-filename = "attachment.txt"
+filenames = ["attachment.txt", "attachment2.csv"]
 
 # Read file in binary mode
-with open(filename, "rb") as file:
-    # Upload the file "STOR filename"
-    ftp_server.storbinary(f"STOR {filename}", file)
+for filename in filenames:
+    with open(filename, "rb") as file:
+        # Upload the file "STOR filename"
+        ftp_server.storbinary(f"STOR {filename}", file)
 
 # Get list of files
 ftp_server.dir()
 
-# Enter filename to retrieve
-filename = "attachment.txt"
-
 # Write file in binary mode
-with open(filename, "wb") as file:
-    # Download the file "RETR filename"
-    ftp_server.retrbinary(f"RETR {filename}", file.write)
+for filename in filenames:
+    with open(filename, "wb") as file:
+        # Download the file "RETR filename"
+        ftp_server.retrbinary(f"RETR {filename}", file.write)
 
-# Display the content of downloaded file
-file = open(filename, "r")
-print('File Content:', file.read())
 
 # Close the Connection
 ftp_server.quit()
