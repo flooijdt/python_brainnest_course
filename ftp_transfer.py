@@ -32,7 +32,7 @@ for filename in filenames:
 ftp_server.dir()
 
 # Creates ftp_files folder to store files there.
-os.mkdir("./ftp_files", exist_ok=True)
+os.makedirs("./ftp_files", exist_ok=True)
 script_dir = os.path.dirname(__file__)
 
 # Write file in binary mode
