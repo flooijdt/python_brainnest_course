@@ -7,7 +7,7 @@ import ftplib
 
 # FTP server information:
 hostname = "ftp.dlptest.com"
-username = "dlpuser@dlptest.com"
+username = "dlpuser"
 password = "rNrKYTX9g7z3RgJRmxWuGHbeu"
 
 # Create server
