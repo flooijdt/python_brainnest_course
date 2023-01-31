@@ -74,7 +74,7 @@ def ftp_transfer(
 
 
 schedule.every().day.at(time_to_run).do(ftp_transfer)
-logging.info("Schedulling happened successfully.")
+logging.info("Scheduling happened successfully.")
 # Creates a infinite loop that will refresh every 60 seconds:
 while True:
     # Checks whether a scheduled task
