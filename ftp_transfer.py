@@ -4,6 +4,7 @@
 # be sure to visit the site since the password changes
 # from time to time.
 import ftplib
+import os
 
 # FTP server information:
 hostname = "ftp.dlptest.com"
@@ -28,12 +29,17 @@ for filename in filenames:
 # Get list of files
 ftp_server.dir()
 
+# Creates ftp_files folder to store files there.
+os.mkdir("./ftp_files")
+script_dir = os.path.dirname(__file__)
+
 # Write file in binary mode
 for filename in filenames:
-    with open(filename, "wb") as file:
+    rel_path = f"ftp_files/{filename}"
+    abs_file_path = os.path.join(script_dir, rel_path)
+    with open(abs_file_path, "wb") as file:
         # Download the file "RETR filename"
         ftp_server.retrbinary(f"RETR {filename}", file.write)
-
 
 # Close the Connection
 ftp_server.quit()
