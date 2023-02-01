@@ -8,6 +8,6 @@ for i in listatest:
         lista.append("Sender: ")
         lista.append(listatest[counter+1])
     counter += 1
-print(lista)
+print(lista.join())
             
         
