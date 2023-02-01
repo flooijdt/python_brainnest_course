@@ -1,0 +1,35 @@
+The shebang line contains the python3 program as the executor of the file. I know for a fact that in other systems, the default python
+compiler is already the python 3 one. if that is the case in your system, you must change it to "#!/bin/python" only, dropping the "3".
+
+First we imported the necessary libraries and started to put the changeable parameters of the script on the top of the document.
+We know the script is a little bloated with comments but We did it in order to help other members of the group who doesn't have 
+much contact with the language or with programming at all.
+
+The method we used in order to match the archives that are going to be attached was the starts_with() string method. We think it
+was a less error prone solution.
+
+The time in which the script will run is entered in the default way of the time library, in a string in 24h format e.g. "19:15"
+
+we start the logging service setting it to write its output in the "log.txt" file. we start it in the DEBUG mode, since that is
+aligned with our objective.
+
+we declare a function which we will use in the iteration of the receivers list. Whe had to make functions because the input of
+the scheduling function is also a function.
+
+we kept the password parameter out of the function in order to give it just one time instead of everytime the function runs.
+
+we create a message email object and added the sender, receiver and subject.
+
+we write two versions of the email: one in txt and other in html, sice, for security measures, some mail managers won't display
+html files.
+
+we attach both to our message object.
+
+we iterate the programs folder files in orther to find the attatchment we specified, open it, encode it and attatch to our message.
+
+we create our SMTP server and send our message email.
+
+we create another function that iterates the recipients_list and use our send_email function on each recipient.
+
+we use this last function in our scheduling and send the program in an infinite loop which will send the email daily in the time
+we determined.
