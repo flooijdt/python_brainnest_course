@@ -136,6 +136,7 @@ def send_email_to_everyone():
             attachment_file
         )
 
+
 logging.info("Iteration thru receivers_list happened successfully.")
 
 # Calls send_email_to_everyone() function daily at
