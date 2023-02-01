@@ -26,3 +26,6 @@ we iterate again our filenames list in orther to retrieve each file from the rem
 we use this last function in our scheduling and send the program in an infinite loop which will send the email daily in the time
 we determined.
 
+PS: We have commented in the code the code necessary to print the list of directories of the ftp server, but since it was a public server, for a security measure, we opted not to traverse the list and take the files in it.
+
+We have also commented out the code to use the internal network but we weren't able to do make it work.
