@@ -5,9 +5,9 @@ lista = []
 counter = 0
 for i in listatest:
     if i == "From:":
-        lista.append("Sender: ")
+        lista.append("\nSender: ")
         lista.append(listatest[counter+1])
     counter += 1
-print(lista.join())
+print("".join(lista))
             
         
