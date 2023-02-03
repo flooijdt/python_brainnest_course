@@ -10,4 +10,4 @@ for i in lista:
 for i in lista2:
     if lista3.count(sorted(i)) > 1:
         lista4.append("".join(i))
-print(lista5)
+print(sorted(lista5))
