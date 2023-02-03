@@ -7,7 +7,14 @@ for i in lista:
     lista2.append(list(i))
     lista3.append(sorted(list(i)))
     lista5.append(set(list(i)))
+
 for i in lista2:
     if lista3.count(sorted(i)) > 1:
         lista4.append("".join(i))
-print(sorted(lista5))
+
+for i in lista3:
+    i = "".join(i)
+
+print(set(lista3))
+
+# print(sorted(lista5))
