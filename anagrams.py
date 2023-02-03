@@ -27,4 +27,5 @@ print(lista6)
 def separator(setx):
     for i in range(len(setx)):
         if setx[i] == setx[i + 1]:
+
             
