@@ -9,7 +9,7 @@ def valuer(lista):
                 greater = i
             else:
                 continue
-        except ValueError:
+        except TypeError:
             continue
     return greater
 
