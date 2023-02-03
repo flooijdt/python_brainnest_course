@@ -3,6 +3,7 @@ lista2 = []
 lista3 = []
 lista4 = []
 lista5 = []
+lista6 = []
 for i in lista:
     lista2.append(list(i))
     lista3.append(sorted(list(i)))
@@ -13,8 +14,13 @@ for i in lista2:
         lista4.append("".join(i))
 
 for i in lista3:
-    i = "".join(i)
+    lista6.append("".join(i))
 
-print(set(lista3))
-
+print(set(lista6)) 
+print(lista)
+print(lista2)
+print(lista3)
+print(lista4)
+print(lista5)
+print(lista6)
 # print(sorted(lista5))
