@@ -16,11 +16,15 @@ for i in lista2:
 for i in lista3:
     lista6.append("".join(i))
 
-print(set(lista6)) 
+print(set(lista6))
 print(lista)
 print(lista2)
 print(lista3)
 print(lista4)
-print(lista5)
+print(sorted(lista5))
 print(lista6)
 # print(sorted(lista5))
+def separator(setx):
+    for i in range(len(setx)):
+        if setx[i] == setx[i + 1]:
+            
