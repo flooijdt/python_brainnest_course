@@ -28,6 +28,6 @@
 #     for i in range(len(setx)):
 #         if setx[i] == setx[i + 1]:
 
-stringer = "abcde"
+stringer = "ebacd"
 sorted_stringer = sorted(stringer)
 print(sorted_stringer)
