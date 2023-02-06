@@ -21,13 +21,13 @@ if option == "e":
         if char == " ":
             ciphered += " "
         else:
-            ciphered += alphabet[alphabet.index(char) + key]
+            ciphered += alphabet[alphabet.index(char) + int(key)]
 elif option == "d":
     for char in message:
         if char == " ":
             ciphered += " "
         else:
-            alphabet[alphabet.index(char) - key]
+            alphabet[alphabet.index(char) - int(key)]
 else:
     print("you entered an invalid option.")
 
