@@ -22,7 +22,7 @@ if option == "e":
             ciphered += " "
         else:
             if alphabet.index(char) + key > 25:
-                indexo = alphabet.index(char) + key - 24
+                indexo = alphabet.index(char) + key - 25
                 ciphered += alphabet[indexo]
             else:
                 ciphered += alphabet[alphabet.index(char) + key]
