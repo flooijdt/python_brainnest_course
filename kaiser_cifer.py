@@ -6,11 +6,11 @@
 # description: encrypt and decrypt text using
 # ceasar cipher.
 
-option = input("Do you want to (e)ncrypt or (d)ecrypt?")
+option = input("Do you want to (e)ncrypt or (d)ecrypt?\n")
 
-key = input("Please enter the key (0 to 25) to use.")
+key = int(input("Please enter the key (0 to 25) to use.\n"))
 
-message = input("Enter the message to encrypt.")
+message = input("Enter the message to encrypt.\n")
 
 alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
             'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
@@ -21,13 +21,22 @@ if option == "e":
         if char == " ":
             ciphered += " "
         else:
-            ciphered += alphabet[alphabet.index(char) + int(key)]
+            if alphabet.index(char) + key > 25:
+                indexo = alphabet.index(char) + key - 24
+                ciphered += alphabet[indexo]
+            else:
+                ciphered += alphabet[alphabet.index(char) + key]
 elif option == "d":
+    message = message.lower()
     for char in message:
         if char == " ":
             ciphered += " "
         else:
-            alphabet[alphabet.index(char) - int(key)]
+            if alphabet.index(char) - key < 0:
+                indexo = alphabet.index(char) - key - 1
+                ciphered += alphabet[indexo]
+            else:
+                ciphered += alphabet[alphabet.index(char) - key]
 else:
     print("you entered an invalid option.")
 
