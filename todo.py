@@ -24,7 +24,7 @@ def delete_todo():
 
 display_inbox(lst)
 command = input("Do you want to complete a todo (c)? Delete a \
-    todo (d)? or create a new todo (n)? input 'c', 'd', or 'n':\n")
+todo (d)? or create a new todo (n)? input 'c', 'd', or 'n':\n")
 if command == "c":
     n = input("input the desired todo number:\n")
     todo = lst[n]
