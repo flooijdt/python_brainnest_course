@@ -7,11 +7,18 @@ def display_inbox(lst):
     for todo in lst:
         print(f"todo number {lst.index(todo)}:\n {todo[1]}")
         print(line)
+
+
 exit = False
 while not exit:
+    print(
+        """############################################################
+        #######################TODO LIST############################
+        ############################################################"""
+    )
     display_inbox(lst)
     command = input("Do you want to complete a todo (c)? Delete a todo (d)? \
-    Create a new todo (n) or exit the program (e)? input 'c', 'd', 'n' or 'e':\n")
+Create a new todo (n) or exit the program (e)? input 'c', 'd', 'n' or 'e':\n")
     if command == "c":
         n = input("input the desired todo number:\n")
         todo = lst[n]
@@ -19,21 +26,21 @@ while not exit:
             print("The todo is already done!\n")
         elif todo[0] == 0:
             todo[0] = 1
-            print(f"todo {n} is now done!")
+            print(f"todo {n} is now done!\n")
         else:
-            print("Invalid todo number.")
+            print("Invalid todo number.\n")
     elif command == "d":
         n = input("Enter the soon to be deleted todo number:\n")
         todo = lst[n]
         if todo:
             lst.pop(n)
         else:
-            print("Invalid todo number.")
+            print("Invalid todo number.\n")
     elif command == "n":
         todo = input("What needs to be done?\n")
         lst.append(["undone", todo])
-        print("New todo added.")
+        print("New todo added.\n")
     elif command == "e":
         exit = True
     else:
-        "Invalid command."
+        "Invalid command.\n"
