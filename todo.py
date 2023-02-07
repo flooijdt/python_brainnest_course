@@ -1,8 +1,5 @@
-
-lst = list()
-
 with open("todo.txt", 'r') as f:
-    f.read(list(lst))
+    lst = list(f.read())
 
 line = "----------------------------------------------------------"
 
