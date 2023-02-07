@@ -1,6 +1,8 @@
-with open("todo.txt", 'r') as f:
-    lst = list(f.read())
+import ast
 
+with open("todo.txt", 'r') as f:
+    lst = f.read()
+    lst = ast.literal_eval(lst)
 line = "----------------------------------------------------------"
 
 
