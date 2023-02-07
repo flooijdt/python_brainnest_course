@@ -9,8 +9,9 @@ def display_inbox():
         print(line)
 
 
-def add_todo():
-    pass
+def add_todo(todo):
+    lst.append(todo)
+    print("Todo successfully added.")
 
 
 def complete_todo():
@@ -19,3 +20,8 @@ def complete_todo():
 
 def delete_todo():
     pass
+
+
+todo = {"Undone": input("Input your new todo:\n")}
+
+print(todo)
