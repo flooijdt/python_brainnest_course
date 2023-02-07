@@ -3,7 +3,7 @@ lst = []
 line = "-----------------------------"
 
 
-def display_inbox():
+def display_inbox(lst):
     for todo in lst:
         print(todo)
         print(line)
@@ -21,6 +21,8 @@ def complete_todo():
 def delete_todo():
     pass
 
+
+display_inbox(lst)
 
 todo = {"Undone": input("Input your new todo:\n")}
 
