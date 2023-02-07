@@ -45,7 +45,7 @@ Create a new todo (n) or exit the program (e)? input 'c', 'd', 'n' or 'e':\n")
         print("New todo added.\n")
     elif command == "e":
         with open("todo.txt", 'w') as f:
-            f.write(lst)
+            f.write(str(lst))
         exit = True
     else:
         "Invalid command.\n"
