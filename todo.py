@@ -5,7 +5,7 @@ line = "-----------------------------"
 
 def display_inbox(lst):
     for todo in lst:
-        print(todo)
+        print(f"todo number {lst.index(todo)}:\n {todo[1]}")
         print(line)
 
 
@@ -37,13 +37,14 @@ if command == "c":
         print("Invalid todo number.")
 elif command == "d":
     n = input("Enter the soon to be deleted todo number:\n")
-    if todo[0] == 1:
-        print("The todo is already done!\n")
-    elif todo[0] == 0:
-        todo[0] = 1
-        print(f"todo {n} is now done!")
+    todo = lst[n]
+    if todo:
+        lst.pop(n)
     else:
         print("Invalid todo number.")
+elif command == "n":
+    todo = input("What needs to be done?\n")
+    lst.append(["undone", todo])
 
 
 # todo = ["Undone", input("Input your new todo:\n")]
