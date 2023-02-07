@@ -1,6 +1,6 @@
 
 lst = []
-line = "-----------------------------"
+line = "----------------------------------------------------------"
 
 
 def display_inbox(lst):
@@ -33,7 +33,7 @@ Create a new todo (n) or exit the program (e)? input 'c', 'd', 'n' or 'e':\n")
         else:
             print("Invalid todo number.\n")
     elif command == "d":
-        n = input("Enter the soon to be deleted todo number:\n")
+        n = int(input("Enter the soon to be deleted todo number:\n"))
         todo = lst[n]
         if todo:
             lst.pop(n)
@@ -44,6 +44,8 @@ Create a new todo (n) or exit the program (e)? input 'c', 'd', 'n' or 'e':\n")
         lst.append(["Undone", todo])
         print("New todo added.\n")
     elif command == "e":
+        with open("todo.txt", 'w') as f:
+            f.write(lst)
         exit = True
     else:
         "Invalid command.\n"
