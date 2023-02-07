@@ -23,7 +23,7 @@ while not exit:
     command = input("Do you want to complete a todo (c)? Delete a todo (d)? \
 Create a new todo (n) or exit the program (e)? input 'c', 'd', 'n' or 'e':\n")
     if command == "c":
-        n = input("input the desired todo number:\n")
+        n = int(input("input the desired todo number:\n"))
         todo = lst[n]
         if todo[0] == "Done":
             print("The todo is already done!\n")
