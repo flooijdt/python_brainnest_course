@@ -25,6 +25,6 @@ def secret_data(arg):
         print("This is confidential")
 
 
-@checker
 @authorize
+@checker
 secret_data(True)
