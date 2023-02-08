@@ -23,3 +23,20 @@ def say_hello():
 
 
 say_hello()
+answer:
+
+
+def greet(func):
+    def wrapper(*args, **kwargs):
+        print("Hello, this is the greeting decorator!")
+        result = func(*args, **kwargs)
+        return result
+    return wrapper
+
+
+@greet
+def say_hello():
+    print("Hello, this is the say_hello function!")
+
+
+say_hello()

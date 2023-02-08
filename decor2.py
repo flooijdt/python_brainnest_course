@@ -11,6 +11,7 @@
 def authorize(func):
     def unauthorized():
         print("Unauthorized")
+    return func
 
 
 def checker(arg):
@@ -25,6 +26,29 @@ def secret_data(arg):
         print("This is confidential")
 
 
-@authorize
 @checker
-secret_data(True)
+authorize(secret_data(True))
+
+
+answer:
+
+
+def authorize(func):
+    def wrapper(*args, **kwargs):
+        if not is_authorized():
+            return "Unauthorized access"
+        return func(*args, **kwargs)
+    return wrapper
+
+
+def is_authorized():
+    # implement your own authorization logic
+    return True
+
+
+@authorize
+def secret_data():
+    return "This is confidential data"
+
+
+print(secret_data())

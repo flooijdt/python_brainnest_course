@@ -22,3 +22,26 @@ def add(a, b):
 
 
 add(1, 2)
+
+answer:
+
+
+def authorize(func):
+    def wrapper(*args, **kwargs):
+        if not is_authorized():
+            return "Unauthorized access"
+        return func(*args, **kwargs)
+    return wrapper
+
+
+def is_authorized():
+    # implement your own authorization logic
+    return True
+
+
+@authorize
+def secret_data():
+    return "This is confidential data"
+
+
+print(secret_data())
