@@ -18,5 +18,7 @@ def greet(func):
 def say_hello():
     prints("Hello")
 
+    say_hello()
+
 
 say_hello()
