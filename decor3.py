@@ -15,10 +15,10 @@ def validate(func):
 
 
 def add(a, b):
-    if type(a) == type(b) == int:
-        return a + b
-    else:
-        return "Error!"
+    # if type(a) == type(b) == int:
+    return a + b
+    # else:
+    # return "Error!"
 
 
 add(1, 2)

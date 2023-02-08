@@ -10,15 +10,16 @@
 # provoked.
 
 def greet(func):
-    def printer():
+    def printer(*args):
         var = func(*args)
         print(var)
+        return var
+    return
 
 
+@greet
 def say_hello():
     print("Hello")
-
-    say_hello()
 
 
 say_hello()
