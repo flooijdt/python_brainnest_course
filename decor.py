@@ -11,12 +11,12 @@
 
 def greet(func):
     def printer():
-        print("aaaaaaaah")
         var = func(*args)
+        print(var)
 
 
 def say_hello():
-    prints("Hello")
+    print("Hello")
 
     say_hello()
 
