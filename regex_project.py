@@ -9,4 +9,4 @@ with open('textregex.txt') as f:
         items_dict = {items.index(i): i for i in items}
         dictio = {'Order Number': match[1], 'Customer': match[2] + ' ' +
                   match[3], 'Items': items_dict}
-        print(dictio)
+        list_o_dicts.append(dictio)
