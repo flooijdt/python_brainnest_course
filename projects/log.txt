@@ -1,0 +1,26 @@
+2023-01-31 08:40:24,859 Iteration thru receivers_list happened successfully.
+2023-01-31 08:40:24,860 Schedulling happened successfully.
+2023-01-31 08:41:24,921 Running job Job(interval=1, unit=days, do=send_email_to_everyone, args=(), kwargs={})
+2023-01-31 08:41:24,921 The program accepted initial parameters.
+2023-01-31 08:41:24,921 validated sender and receiver paratestes868@gmail.com.
+2023-01-31 08:41:24,927 The program attached and encoded files.
+2023-01-31 08:41:26,701 SMTP server created successfully.
+2023-01-31 08:41:28,851 Email sended successfully to paratestes868@gmail.com
+2023-01-31 08:41:28,853 The program accepted initial parameters.
+2023-01-31 08:41:28,853 validated sender and receiver sijlxsufsbmfluchxv@tmmcv.net.
+2023-01-31 08:41:28,858 The program attached and encoded files.
+2023-01-31 08:41:30,899 SMTP server created successfully.
+2023-01-31 08:41:32,991 Email sended successfully to sijlxsufsbmfluchxv@tmmcv.net
+2023-01-31 08:46:49,702 Iteration thru receivers_list happened successfully.
+2023-01-31 08:46:49,703 Schedulling happened successfully.
+2023-01-31 08:47:49,760 Running job Job(interval=1, unit=days, do=send_email_to_everyone, args=(), kwargs={})
+2023-01-31 08:47:49,760 The program accepted initial parameters.
+2023-01-31 08:47:49,760 validated sender and receiver paratestes868@gmail.com.
+2023-01-31 08:47:49,762 The program attached and encoded files.
+2023-01-31 08:47:51,012 SMTP server created successfully.
+2023-01-31 08:47:53,265 Email sended successfully to paratestes868@gmail.com
+2023-01-31 08:47:53,266 The program accepted initial parameters.
+2023-01-31 08:47:53,267 validated sender and receiver sijlxsufsbmfluchxv@tmmcv.net.
+2023-01-31 08:47:53,273 The program attached and encoded files.
+2023-01-31 08:47:54,493 SMTP server created successfully.
+2023-01-31 08:47:56,541 Email sended successfully to sijlxsufsbmfluchxv@tmmcv.net

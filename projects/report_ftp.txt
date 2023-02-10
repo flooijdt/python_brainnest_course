@@ -1,0 +1,31 @@
+The shebang line contains the python3 program as the executor of the file. I know for a fact that in other systems, the default python
+compiler is already the python 3 one. if that is the case in your system, you must change it to "#!/bin/python" only, dropping the "3".
+
+First we imported the necessary libraries and started to put the changeable parameters of the script on the top of the document.
+We know the script is a little bloated with comments but We did it in order to help other members of the group who doesn't have 
+much contact with the language or with programming at all.
+
+we had to use a public testing ftp server and we added the parameters cointained there to our program (username, hostname and password).
+
+we start our ftp server telling it to use utf-8 encoding.
+
+The time in which the script will run is entered in the default way of the time library, in a string in 24h format e.g. "19:15"
+
+we start the logging service setting it to write its output in the "log_ftp.txt" file. we start it in the DEBUG mode, since that is
+aligned with our objective.
+
+we declare a function which we will use in the iteration of the receivers list. We had to make functions because the input of
+the scheduling function is also a function.
+
+we iterate our filenames list in order to find the attachment we specified, open it, encode it and send it to the ftp remote server.
+
+we make a directory ftp_files in the programs folder.
+
+we iterate again our filenames list in orther to retrieve each file from the remote ftp server.
+
+we use this last function in our scheduling and send the program in an infinite loop which will send the email daily in the time
+we determined.
+
+PS: We have commented in the code the code necessary to print the list of directories of the ftp server, but since it was a public server, for a security measure, we opted not to traverse the list and take the files in it.
+
+We have also commented out the code to use the internal network but we weren't able to make it work.
