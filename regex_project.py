@@ -14,4 +14,5 @@ with open('textregex.txt') as f:
 
 
 with open('regex_output.txt') as f:
-    print(f.read())
+    for line in f:
+        print(f.readline())
