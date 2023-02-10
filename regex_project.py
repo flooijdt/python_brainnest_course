@@ -1,4 +1,6 @@
 import re
 
 with open('textregex.txt') as f:
-    string_o_text = f.read()
+    for line in f:
+        print(line)
+    # line_o_text = f.readline()
