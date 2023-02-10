@@ -9,4 +9,9 @@ with open('textregex.txt') as f:
         items_dict = {items.index(i): i for i in items}
         dictio = {'Order Number': match[1], 'Customer': match[2] + ' ' +
                   match[3], 'Items': items_dict}
-        list_o_dicts.append(dictio)
+        with open('regex_output.txt', 'a') as o:
+            o.write(dictio)
+
+
+with open('regex_output.txt') as f:
+    print(r.read())
