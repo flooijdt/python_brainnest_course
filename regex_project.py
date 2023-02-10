@@ -10,7 +10,7 @@ with open('textregex.txt') as f:
         dictio = {'Order Number': match[1], 'Customer': match[2] + ' ' +
                   match[3], 'Items': items_dict}
         with open('regex_output.txt', 'a') as o:
-            o.write(dictio)
+            o.write(str(dictio))
 
 
 with open('regex_output.txt') as f:
