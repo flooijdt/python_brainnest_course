@@ -1,5 +1,5 @@
 def func(x):
-    print(str(lambda x: x.title()))
+    return str(lambda x: x.title())
 
 
-func("i love being another person.")
+print(func("i love being another person."))
