@@ -1,5 +1,5 @@
 def func(x):
-    lambda x: x.title()
+    return lambda x: x.title()
 
 
 print(func("i love being another person."))
