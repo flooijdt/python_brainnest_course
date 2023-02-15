@@ -1,3 +1,3 @@
 
 x = "i love being another person."
-stringer = lambda x: x.title())
+def stringer(x): return x.title()
