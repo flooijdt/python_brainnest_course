@@ -1,5 +1,3 @@
-def func(x):
-    return str(lambda x: x.title())
 
-
-print(func("i love being another person."))
+x = "i love being another person."
+stringer = lambda x: x.title())
