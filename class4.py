@@ -20,3 +20,5 @@ marta = BankAccount("marta", 100)
 
 print(pedro.bank_name)
 print(marta.bank_name)
+pedro.get_balance()
+marta.get_balance()
