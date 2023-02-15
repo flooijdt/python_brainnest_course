@@ -3,6 +3,7 @@
 
 list_o_dicts = [{"a": 1}, {"b": 2}, {"c": 3}, {"d": 4}]
 
-lista = list(filter(lambda x: x == "a" or x == "d", list_o_dicts))
+lista = list(filter(
+    lambda x: [i for i in x if "a" in i.keys() or "d" in i.keys()], list_o_dicts))
 
 print(lista)
