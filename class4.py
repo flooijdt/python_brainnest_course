@@ -2,13 +2,17 @@ class BankAccount:
     def __init__(self, account_holder_name, balance):
         self.account_holder_name = account_holder_name
         self.balance = balance
-        bank_name = "BankOfAmerica"
+
+    bank_name = "BankOfAmerica"
 
     def deposit(self):
         print("this is a deposit.")
 
     def withdraw(self):
         print("This is a withdraw.")
+
+    def get_balance(self):
+        print(self.balance)
 
 
 pedro = BankAccount("pedro", 0)
